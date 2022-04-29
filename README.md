@@ -41,4 +41,15 @@ public static void main(String[] args) {
 		// seu codigo
 	}
 ```
-- Em java "String" é uma classe por isso começa com çletra maiuscula.
+- Em java "String" é uma classe por isso começa com letra maiuscula.
+
+## Codigo em Java com editor de Texto - Linux
+
+> Codigo do editor NomeDoArquivo.java  
+> Nome do arquivo o mesmo que a classe
+
+pwd - ver qual é o diretorio
+ls - listar o que tem no diretorio
+javaC NomeDoArquivo.java - compilar o java
+java NomeDoArquivo - Rodar
+
