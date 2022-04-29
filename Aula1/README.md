@@ -1,6 +1,7 @@
 # Aula 1
 
-Ayula de POO com o prof: Gustavo
+Aula de POO com o prof: Gustavo
+Email: gpgs1978@gmail.com
 
 ## Alertas
 Teremos 3 provas no papel, 3 teste por trimeste no papel. </br>
