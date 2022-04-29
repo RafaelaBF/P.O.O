@@ -53,3 +53,20 @@ ls - listar o que tem no diretorio
 javaC NomeDoArquivo.java - compilar o java
 java NomeDoArquivo - Rodar
 
+```java
+public class MyFirstApp {
+	public static void main(String[] args){
+		System.out.println("qualquer coisa");
+		System.out.println("hueeeba " + args[0] + args[1] + ", bão?");
+	}
+}
+```
+Na hora de executar o programa com java NomeDoArquivo , ao colocar outros textos do lado, o programa guarda esses textos como argumento no array declarado no PSVM(String[] args)
+
+```bash
+~$ javac MyFirstApp.java
+~$ java MyFirstApp atim taporra
+qualquer coisa
+hueeeba atimtaporra, bão?
+
+```
