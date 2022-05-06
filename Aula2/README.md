@@ -15,7 +15,7 @@ Aula usando a IDE Eclipse.
 - Para passar parâmetros dentro do Eclipse: <br>
   > `Botão direito no espaço do arquivo .java > Run As > Run Configurations > Arguments` <br>
 
-> **P.S**: Para usar o modo escuro vá: <br>
+> **OBS**.: Para usar o modo escuro vá: <br>
 > ` Windows > preferences > General > Apperance > `
 
 
@@ -26,26 +26,52 @@ Aula usando a IDE Eclipse.
 
 ## Anotações Soltas
 
+---
 A classe é um molde. Por exemplo: um cão pode ter tamanho, raça e nome, e a classe cão podem ser vários cãos diferentes com tamanhos, raças e nomes diferentes.
 
 ```java
 public class Cao {
-  float tamanho;
+  double tamanho;
   String raca;
   String nome;
 }
 ```
+---
+Para criar um novo objeto a partir de uma classe, crie uma nova instância do objeto.
+
+Dentro do public static void main(String[] args):
+
+```java
+public static void main(String[] args){
+  Cao caoObj = new Cao();
+
+  caoObj.nome = "Bidu";
+  caoObj.raca = "Pastor Alemão";
+  caoObj.tamanho = 20.4;
+}
+```
+
+> **OBS**.: Acima, chamamos o processo de colocar os valores em um objeto instanciado é "_Popular_"
+---
+
+Quando um objeto é criado, a variavel que está associada a ele, está somente "apontando" para esse unico objeto. Ou seja, caso uma outra variavel do tipo do objeto seja criada, e associada a uma outra variável, ela somente apontará para o mesmo lugar que o objeto inicial.
+
+Execute o código [DesafioDeProva.java]()
+
+```java
+Cao c1 = new Cao();
+c1.nome = "Bidu";
+
+Cao c2 = new Cao();
+c2.nome = "Pluto";
+
+Cao c3 = c1;
+c3.nome = "Toto";
+
+System.out.println(c1.nome);
+```
+
+> output: Toto
 
 
 
-para criar um novo objeto a partir de uma classe, crie uma nova instância do objeto.
-
-dentro do psvm:
-
-Cao caoObj = new Cao();
-
-caoObj.nome = "Bidu";
-caoObj.raca = "Pastor Alemão";
-caoObj.tamanho = 
-
-OBS: isso aq de cima, de colocar os valores de um objeto instanciado é "Popular"
