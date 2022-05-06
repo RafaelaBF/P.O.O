@@ -18,11 +18,51 @@ Aula usando a IDE Eclipse.
 > **OBS**.: Para usar o modo escuro vá: <br>
 > ` Windows > preferences > General > Apperance > `
 
+### Debug
+
+Para utilizar a função de _Debug_ no Eclipse, primeiro é necessário colocar um `ponto de parada` nas linhas do código.
+Ao rodar o _Debug_, o programa rodará até esse ponto de parada, e a partir dele rodará linha por linha.
+
+Para colocar este ponto de parada, ao lado esquerdo dos indicadores da linha: <br>
+
+> ` Botão direito > Toggle Breakpoint ` <br>
+
+Depois, no espaço do arquivo .java:
+
+> ` Botão direito > Debug As > Java Application `
+
+> **OBS**.: No primeiro Debug, o Eclipse perguntará se você deseja trocar para a Perspectiva de Debug, onde é possível visualizar as **variáveis**, e as etapas feitas durante funcionamento do código.
+
+É possível controlar o fluxo do código a partir do Breakpoint definido com as seguintes funções no canto superior da IDE:
+
+Resume: Continuar o código
+Suspend: Pausar
+Terminate: Parar o debug
+
+Step Into: Proxima linha
+Step Return: Voltar para a linha anterior
+Step Over: Pular a linha
+
 
 ## Quadros Anotados da Aula 2
 
 - Uma classe é o projeto de um objeto.
 - Ela informa ao Java como criar um objeto desse tipo específico. Cada objeto criado a partir dessa classe terá seus próprios valores para as variáveis de instância da classe.
+
+---
+
+- As coisas que um objeto **conhece** sobre ele são chamadas de **variáveis de instancia**. elas representam o estado de um objeto (os dados) e podem ter valores exclusivos para cada objeto desse tipo.
+- considere **instancia** como outra maneira de dizer **objeto**.
+- As coisas que um objeto faz são chamadas de **métodos**. Quando projetar uma classe, você pensará nos dados que um objeto terá que conhecer sobre si mesmo e também projetará os métodos que operarão sobre esses dados. É comum um objeto ter métodos que leiam ou gravem os valores das variáveis de instância. Por exemplo, os objetos Despertador tem uma variável de instância que armazena a hora de despertar e dois métodos que capturam e configuram essa hora.
+- Portanto, os objetos têm variávels de instância e métodos, mas essas variáveis de instância e métodos são projetadas como parte da classe.
+
+---
+
+- As declarações de variáveis consistem de um tipo e um nome de variável. Exemplo:
+  - int idade;
+  - String nome;
+  - Boolean existe;
+  - double numero;
 
 ## Anotações Soltas
 
@@ -73,5 +113,8 @@ System.out.println(c1.nome);
 
 > output: Toto
 
+---
+
+Booleans em Java só aceitam True ou False.
 
 
