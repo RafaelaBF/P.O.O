@@ -143,3 +143,44 @@ System.out.println(x);
 ```
 > Output: 6 <br>
 > Output: 5
+
+## Input do console em Java
+
+Para receber inputs do terminal em java, é necessário utilizar a biblioteca Scanner. 
+
+### Como utilizar
+
+- Primeiro, importe a biblioteca:
+
+> import java.util.Scanner;
+
+- Segundo, crie uma instância do objeto Scanner.
+
+```java
+import java.util.Scanner;
+package programa3;
+
+public class Aula3 {
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+  }
+}
+```
+
+- Terceiro, utilize os métodos da classe para puxar um tipo específico:
+
+```java
+import java.util.Scanner;
+package programa3;
+
+public class Aula3 {
+  public static void main(String[] args){
+    System.out.println("Insira seu nome: ");
+    Scanner sc = new Scanner(System.in);
+    String linha = sc.nextLine();
+    System.out.println("Insira a idade: ");
+    int lerInteiro = sc.nextInt();
+    System.out.println("Seu nome é: " + linha + ", e sua idade é: " + lerInteiro);
+  }
+}
+```
