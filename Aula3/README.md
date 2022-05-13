@@ -85,3 +85,61 @@ public class Aula3 {
 ```
 
 > OBS.: Em quaisquer somas de números "inteiros", o compilador Java os transforma para **int**, então em uma soma de bytes, é necessário fazer o casting.
+
+## Declaração de condições e loop
+
+```java
+int k = 0
+if(k < 10){
+  System.out.println()
+}
+
+//for loop
+
+for (int i = 0; i < 10; i++){
+  System.out.println("rodada" + i)
+}
+
+//while
+
+int j = 0;
+while (j<10) {
+  j++;
+}
+
+//do while
+
+int g = 0;
+do {
+  i++;
+} while (g<10);
+```
+
+### Diferença entre `++i` e `i++`
+
+- Pré-incrementar:
+> Primeiro incrementa a variável, e depois atribui o valor(caso ele seja atribuido à uma variável).
+
+```java
+int i = 5;
+int x = ++i;
+
+System.out.println(i);
+System.out.println(x);
+```
+> Output: 6 <br>
+> Output: 6
+
+- Pós-incrementar:
+> Primeiro atribui o valor(caso ele seja atribuido à uma variável), e depois incrementa a variável.
+
+
+```java
+int i = 5;
+int x = i++;
+
+System.out.println(i);
+System.out.println(x);
+```
+> Output: 6 <br>
+> Output: 5
