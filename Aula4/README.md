@@ -43,3 +43,48 @@ public class Aula4 {
 3. Popule o array com 3 alunos.
 4. Atribua nome e nota aos alunos (sem usar scanner).
 5. Crie um novo método que recebe um array de alunos. Esse metodo deve retornar a média das notas dos alunos.
+
+### Resolução
+
+> Arquivo: Aluno.java
+
+```java
+public class Aluno {
+	String nome;
+	double nota;
+	
+	public Aluno(String nome, double nota) {
+		this.nome = nome;
+		this.nota = nota;
+	}
+}
+```
+---
+No arquivo Aluno
+---
+
+
+> Arquivo: Main.java
+
+```java
+public class Main {
+	public static void main(String[] args) {
+		
+		Aluno[] alunos = new Aluno[3];
+		
+		alunos[0] = new Aluno("Rafaela", 10);
+		alunos[1] = new Aluno("Dora", 9);
+		alunos[2] = new Aluno("Guilherme", 9.2);
+		
+		System.out.println(media_alunos(alunos));
+		
+	}
+	public static double media_alunos(Aluno[] array) {
+		double soma_media = 0;
+		for (int i = 0; i < array.length; i++) {
+			soma_media += array[i].nota;
+		}
+		return soma_media/array.length;
+	}
+}
+```
