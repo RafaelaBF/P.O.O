@@ -59,10 +59,6 @@ public class Aluno {
 	}
 }
 ```
----
-No arquivo Aluno
----
-
 
 > Arquivo: Main.java
 
