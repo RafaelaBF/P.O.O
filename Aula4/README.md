@@ -84,3 +84,6 @@ public class Main {
 	}
 }
 ```
+
+> OBS.: Para formatar números quebrados (float, double) com precisão decimal, basta utilizar:
+`String.format("%2f", valor)`;
