@@ -87,3 +87,38 @@ public class Main {
 
 > OBS.: Para formatar números quebrados (float, double) com precisão decimal, basta utilizar:
 `String.format("%2f", valor)`;
+
+## Adicionar mais valores que o limite de um array
+
+- Quando um array é declarado, não é possível adicionar mais valores além do que o limite determinado.
+- Para adicionar valores além do limite, é preciso:
+
+1. Criar um novo array com uma capacidade maior.
+
+```java
+public static int[] aumentaArray(int[] x){
+	int[] x = new int[3];
+	int[] y = new int[5];
+	x[0] = 3;
+	x[1] = 2;
+	x[2] = 8;
+}
+```
+
+2. Copiar os valores do array antigo para o novo.
+
+```java
+public static int[] aumentaArray(int[] x){
+	int[] x = new int[3];
+	int[] y = new int[5];
+	x[0] = 3;
+	x[1] = 2;
+	x[2] = 8;
+	
+	for(int i = 0; i < x.length; i++){
+		y[i] = x[i];
+	}
+	
+	return y;
+}
+```
