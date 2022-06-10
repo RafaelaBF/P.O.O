@@ -36,6 +36,7 @@ public class Exerc1 {
 
 1. Também crie um método denominado receberPassageiro(Passageiro p), que irá permitir a entrada dos passageiros no ônibus, ou seja, no array de Passageiros. Caso o array de Passageiros esteja cheio, você deve retornar o valor "falso" para o método. Caso o passageiro tenha "entrado" no ônibus, retorne "verdadeiro".
 2. Crie uma classe chamada Principal com o método main. Crie um objeto da classe ônibus. Receba, ainda na classe principal, 100 passageiros no console. Receba o nome e o peso dos passageiros. Crie o objeto passageiro e tente inserir no ônibus, caso o ônibus esteja cheio (array cheio), imprima no console: "Ônibus cheio".
+3. Ao final, ainda na classe principal, crie um método estático que recebe um ônibus e calcula a média do peso de todos os passageiros desse ônibus.
 
 ```java
 public class Passageiro {
