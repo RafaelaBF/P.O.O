@@ -21,6 +21,9 @@ public <NomeDoObjeto>(){
 
 > OBS.: Os objetos ficam na memoria, e o proprio java posteriormente consegue recolher eles da memória
 
+
+
+
 ## Criação dos construtores
 
 Os construtores podem ser criados com parâmetros, em casos onde a instanciação é feita com algum valor passado inicialmente. Porém, isso exige que a instanciação de todas os objetos daquela classe sejam iniciados com o parâmetro exigido.
@@ -68,15 +71,41 @@ public class Programa{
 
 > OBS.: Getters e Setters são chamados na literatura de _Encapsulamento_
 
+## Static
+
+Ao definir um metodo como estatico, é possivel chama-lo diretamente com o nome da classe, sem instanciar um objeto para usar.
+
+> OBS.: Normalmente o static é utilizado em casos onde não é necessário a utilização de variaveis de instância.
+
+```java
+public class Calculadora {
+  public static double media (double a, double b){
+    return (a + b)/2;
+  }
+}
+```
+
+```java
+public class Teste{
+  public static void main(String[] args){
+    System.out.println(Calculadora.media(5, 6));
+    System.out.println(Math.random());
+  }
+}
+```
+
+
 
 
 ## Dicas de Eclipse
 
 Gerar getters e setters automaticamente:
 
-Botão Direito > Source > Generate Getters and Setters
+> Botão Direito > Source > Generate Getters and Setters
+
 ou
-Alt + Shift + S > Generate Getters and Setters
+
+> Alt + Shift + S > Generate Getters and Setters
 
 
 
