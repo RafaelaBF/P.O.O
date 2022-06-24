@@ -75,10 +75,16 @@ public class Programa{
 
 Ao definir um metodo como estatico, é possivel chama-lo diretamente com o nome da classe, sem instanciar um objeto para usar.
 
+O static define que é algo 
+
 > OBS.: Normalmente o static é utilizado em casos onde não é necessário a utilização de variaveis de instância.
 
 ```java
 public class Calculadora {
+  
+  public int a;
+  public static int b;
+
   public static double media (double a, double b){
     return (a + b)/2;
   }
@@ -88,14 +94,25 @@ public class Calculadora {
 ```java
 public class Teste{
   public static void main(String[] args){
-    System.out.println(Calculadora.media(5, 6));
-    System.out.println(Math.random());
+    
+    Calculadora calc1 = new Calculadora();
+    Calculadora calc2 = new Calculadora();
+    
+    calc1.a = 10;
+    calc2.a = 20;
+    calc1.b = 13;
+    calc2.b = 23;
+    
+    //atributos estaticos sao que nem metodos estaticos, ce nao precisa instanciar para utilizar
+    //System.out.println(Calculadora.media(5, 6));
+    
   }
 }
 ```
 
+Como "b" é estático, ele é unico da classe, então os seus objetos teoricamente "compartilham-o":
 
-
+> Output: 10 20 23 23
 
 ## Dicas de Eclipse
 
@@ -106,7 +123,6 @@ Gerar getters e setters automaticamente:
 ou
 
 > Alt + Shift + S > Generate Getters and Setters
-
 
 
 
