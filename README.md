@@ -1,6 +1,6 @@
 # P.O.O
 
-Repositório destinado as aulas de Progrmação orientada a objeto (P.O.O) no CEFET-RJ.
+Repositório destinado as aulas de Programação orientada a objeto (P.O.O) no CEFET-RJ.
 
 # Devs:
 - 👨🏻‍💻 ERIC BARBOSA CASTELLAR PINHEIRO; <a href="https://github.com/Ericcastell"><img  src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white&link=mailto:https://github.com/Ericcastell" width="50"></a>
