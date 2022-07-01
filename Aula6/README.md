@@ -75,8 +75,6 @@ public class Programa{
 
 Ao definir um metodo como estatico, é possivel chama-lo diretamente com o nome da classe, sem instanciar um objeto para usar.
 
-O static define que é algo 
-
 > OBS.: Normalmente o static é utilizado em casos onde não é necessário a utilização de variaveis de instância.
 
 ```java
