@@ -62,7 +62,7 @@ public boolean receberPassageiro(Passageiro p){
 > No arquivo principal
 ```java
 public class Principal {
-  public static void main (String args []) {
+  public static void main (String[] args) {
     Onibus on = new Onibus();
     Scanner sc = new Scanner (System.in);
     for(int i = 0; i < 100; i++){
