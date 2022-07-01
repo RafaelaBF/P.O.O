@@ -60,7 +60,7 @@ public class Pessoa{
 public class Programa{
   public static void main(String[] args){
     Pessoa p1 = new Pessoa("Victor");
-    p1.setIdade(15);
+    p1.setIdade(18);
     System.out.println(p1.getIdade() + p1.getNome());
     Pessoa p2 = new Pessoa("Rafaela", 17);
   }
