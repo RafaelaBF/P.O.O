@@ -132,5 +132,31 @@ public class Main {
 }
 ```
 
+Para que as classes filhas possam acessar os atributos da classe mãe, já que os mesmos são privados, é necessário a utilização dos getters e setters para trabalhar com eles.
+
+> Arquivo: Leao.java
+
+```java
+public class Leao extends Animal{
+	public void rugir() {
+		System.out.println("Leao " + this.getNome() + " rugiu.");
+	}
+}
+```
+
+## Polimorfismo
+
+O tipo do objeto instanciado em memoria, q a gente deu o New, ele nao vai mudar nunca. ele foi instanciado cmomo leao ele vai ser leao.
+oq muda e a forma como a gente olha pro objeto
+
+a gente pode olhar pro leao como um animal
+como um objeto
+
+por isso polimorfismo
 
 
+
+É possível instanciar um objeto pela sua classe mãe, porém isso não significa que ele tenha acesso a 
+
+**o professor falou muita coisa ao msm tempo de polimorfismo, sobrescrita e herança, e nao deu pra pegar os codigo e o readme ao msm tempo**
+**tem mais algumas anotacoes nos codigos**
