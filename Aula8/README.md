@@ -31,5 +31,75 @@ public class ExemploSobrecarga {
 }
 ```
 
+A quantidade de sobrecargas não tem restrição. Porém, deve-se ter cuidado com as assinaturas passadas, pois não pode ter duas assinaturas iguais.
+
+```java
+public Animal (String cor){
+}
+public Animal (String nome){
+}
+public Animal (int idade, String nome){
+}
+```
+
+O exemplo acima demonstra o problema, pois ao instanciar `new Animal("Totó")`, o java não saberá em qual colocar, ou no nome ou na cor.
+
+# Exemplo bagulho de prova
 
 
+# anotacao solta envolvendo o Super
+
+O super é uma forma de acessar a classe acima da que ta sendo chamada
+
+o super() é uma chamada ao construtor, porem ele tbm pode ser chamado como um metodo
+
+super.comer(); dessa forma, ele chama o comer() da classe acima de qual foi chamada.
+
+no entanto, em qualquer lugar de uma subclasse, é possivel chamar o suber como um metodo
+
+todo construtor tem uma chamada ao super implicitamente
+
+se vc chamar o super, ele vai chamar explicitamente
+
+a chamada ao super é uma chamada ao construtor da superclasse
+
+ou seja, o super da classe leao chama o construtor da classe animal, mas se ela tem parametros no construtor é necessário passar no super os atributos tbm.
+
+o super é na maioria das vezes a primeira linha dentro do construtor, porque voce precisa primeiro criar a estrutura toda na memória, para aí sim settar o nome, peso e etc.
+
+porem, na primeira linha de um construtor SEMPRE deve ter uma chamada a algum construtor, seja essa chamada implicita ou explicita. também nao se restringe ao `this` ou o `super`
+
+as chamadas ao super é exatamente construir toda a estrutura da memoria para aí sim criar o objeto
+
+```java
+public class Animal {
+  public Animal (String nome, int idade){
+    this.nome = nome;
+    this.idade = idade;
+  }
+}
+
+public class Leao extends Animal {
+  private double tamanhoJuba;
+  public Leao (String nome, int idade, double tamanhoJuba){
+    super(this.nome, this.idade); //exemplo do super sempre na primeira linha do construtor
+    this.tamanhoJuba = tamanhoJuba;
+    super.comer();
+  }
+}
+```
+
+# anotacao solta sobre o this
+
+quando o this é chamado como um metodo, ele pode chamar outros construtores dentro da propria classe
+
+```java
+public Animal (String nome, int idade){
+  this.nome = nome;
+  this.idade = idade;
+}
+public Animal (String nome){
+  this(nome, 0);
+}
+
+```
