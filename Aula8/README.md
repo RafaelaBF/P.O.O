@@ -47,15 +47,15 @@ O exemplo acima demonstra o problema, pois ao instanciar `new Animal("Totó")`, 
 # Exemplo bagulho de prova
 
 
-# anotacao solta envolvendo o Super
+# anotacao solta envolvendo oSuper
 
-O super é uma forma de acessar a classe acima da que ta sendo chamada
+O super é uma forma de acessar a classe _acima_ da que ta sendo chamada.
 
 o super() é uma chamada ao construtor, porem ele tbm pode ser chamado como um metodo
 
 super.comer(); dessa forma, ele chama o comer() da classe acima de qual foi chamada.
 
-no entanto, em qualquer lugar de uma subclasse, é possivel chamar o suber como um metodo
+no entanto, em qualquer lugar de uma subclasse, é possivel chamar o super como um metodo
 
 todo construtor tem uma chamada ao super implicitamente
 
@@ -82,7 +82,7 @@ public class Animal {
 public class Leao extends Animal {
   private double tamanhoJuba;
   public Leao (String nome, int idade, double tamanhoJuba){
-    super(this.nome, this.idade); //exemplo do super sempre na primeira linha do construtor
+    super(this.nome, this.idade); //exemplo da primeira linha sendo uma chamada a um construtor
     this.tamanhoJuba = tamanhoJuba;
     super.comer();
   }
@@ -102,4 +102,77 @@ public Animal (String nome){
   this(nome, 0);
 }
 
+```
+
+# anotacao solta
+
+ao tentar printar uma variavel que aponta para um objeto, ele teoricamente printaria
+
+nome da classe + @ + hashcode
+
+porem, o java chama o metodo .toString() implicitamente
+
+e como o metodo .toString é um metodo da classe String, é possível sobrescrever ela em outras classes
+
+# Exercicio feito na sala
+
+> Arquivo: Estrela.java
+
+```java
+package exercicio;
+
+public class Estrela {
+	private String id;
+	private double raio;
+	
+	public Estrela(String id, double raio) {
+		this.id = id;
+		this.raio = raio;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public double getRaio() {
+		return raio;
+	}
+	public void setRaio(double raio) {
+		this.raio = raio;
+	}
+	
+	public String toString() {
+		return "Id: " + this.id + "\nRaio: " + this.raio;
+	}
+	
+}
+
+```
+
+> Arquivo: Main.java
+
+```java
+package exercicio;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Estrela est1 = new Estrela("Sol", 123);
+		Estrela est2 = new Estrela("Sirius", 456);
+		System.out.println(est1);
+		System.out.println(est2);
+	}
+
+}
+```
+
+> Console
+
+```txt
+Id: Sol
+Raio: 123.0
+Id: Sirius
+Raio: 456.0
 ```
