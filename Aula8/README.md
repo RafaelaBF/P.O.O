@@ -47,29 +47,30 @@ O exemplo acima demonstra o problema, pois ao instanciar `new Animal("Totó")`, 
 # Exemplo bagulho de prova
 
 
-# anotacao solta envolvendo oSuper
+# Anotações envolvendo o Super
 
-O super é uma forma de acessar a classe _acima_ da que ta sendo chamada.
+* O super é uma forma de acessar a classe _acima_ da que ta sendo chamada.
 
-o super() é uma chamada ao construtor, porem ele tbm pode ser chamado como um metodo
+* O objetivo do Super é exatamente _construir_ toda a estrutura da memoria feita pelos _construtores_ para aí sim criar o objeto de acordo com a hierarquia das superclasses.
 
-super.comer(); dessa forma, ele chama o comer() da classe acima de qual foi chamada.
+* o super() é uma chamada ao construtor, porem ele tbm pode ser chamado como um metodo
 
-no entanto, em qualquer lugar de uma subclasse, é possivel chamar o super como um metodo
+* super.comer(); dessa forma, ele chama o comer() da classe acima de qual foi chamada.
 
-todo construtor tem uma chamada ao super implicitamente
+* no entanto, em qualquer lugar de uma subclasse, é possivel chamar o super como um metodo
 
-se vc chamar o super, ele vai chamar explicitamente
+* todo construtor tem uma chamada ao super implicitamente
 
-a chamada ao super é uma chamada ao construtor da superclasse
+* se vc chamar o super, ele vai chamar explicitamente
 
-ou seja, o super da classe leao chama o construtor da classe animal, mas se ela tem parametros no construtor é necessário passar no super os atributos tbm.
+* a chamada ao super é uma chamada ao construtor da superclasse
 
-o super é na maioria das vezes a primeira linha dentro do construtor, porque voce precisa primeiro criar a estrutura toda na memória, para aí sim settar o nome, peso e etc.
+* ou seja, o super da classe leao chama o construtor da classe animal, mas se ela tem parametros no construtor é necessário passar no super os atributos tbm.
 
-porem, na primeira linha de um construtor SEMPRE deve ter uma chamada a algum construtor, seja essa chamada implicita ou explicita. também nao se restringe ao `this` ou o `super`
+* o super é na maioria das vezes a primeira linha dentro do construtor, porque voce precisa primeiro criar a estrutura toda na memória, para aí sim settar o nome, peso e etc.
 
-as chamadas ao super é exatamente construir toda a estrutura da memoria para aí sim criar o objeto
+* porem, na primeira linha de um construtor SEMPRE deve ter uma chamada a algum construtor, seja essa chamada implicita ou explicita. também nao se restringe ao `this` ou o `super`
+
 
 ```java
 public class Animal {
@@ -89,9 +90,9 @@ public class Leao extends Animal {
 }
 ```
 
-# anotacao solta sobre o this
+# Anotações sobre o This
 
-quando o this é chamado como um metodo, ele pode chamar outros construtores dentro da propria classe
+Quando o _this_ é chamado como um metodo, ele pode chamar outros construtores dentro da propria classe.
 
 ```java
 public Animal (String nome, int idade){
@@ -99,22 +100,20 @@ public Animal (String nome, int idade){
   this.idade = idade;
 }
 public Animal (String nome){
-  this(nome, 0);
+  this(nome, 0); //this chamando o construtor da propria classe, colocando um valor padrão para a idade do animal caso a mesma não seja especificada.
 }
 
 ```
 
-# anotacao solta
+# Método .toString()
 
-ao tentar printar uma variavel que aponta para um objeto, ele teoricamente printaria
+Ao tentar printar uma variavel que aponta para um objeto, ele teoricamente printaria:
 
-nome da classe + @ + hashcode
+> nome_da_classe + @ + hashcode
 
-porem, o java chama o metodo .toString() implicitamente
+Porém, o java chama o metodo .toString() implicitamente. E como o método .toString() é um metodo da classe String, é possível sobrescrever ela em outras classes.
 
-e como o metodo .toString é um metodo da classe String, é possível sobrescrever ela em outras classes
-
-# Exercicio feito na sala
+# Exercicio de sobrescrita do método .toString()
 
 > Arquivo: Estrela.java
 
@@ -176,3 +175,55 @@ Raio: 123.0
 Id: Sirius
 Raio: 456.0
 ```
+
+# Packages
+
+Para fazer uma melhor organização das classes, e permitir a criação de duas classes com mesmo nome porém com focos diferentes, utilizamos os packages.
+
+> Ex.:
+
+```txt
+br.com.abc.informatica -> Teclado.class
+br.com.abc.instrumentos -> Teclado.class
+br.com.abc.principais -> Principal.class
+```
+
+Eles permitem que a gente restrinja quais classes tem acesso a quais classes, dependendo de quais _imports_ nós colocamos.
+
+> Ex.:
+
+```txt
+package br.com.abc.principais;
+import br.com.abc.informatica.Teclado;
+```
+
+
+## No eclipse
+
+> Botão direito > New > Package (parece a logo do windows)
+
+
+
+
+## Nome totalmente qualificado da classe
+
+O nome da classe é o nome do pacote mais o nome da classe
+
+dessa forma, da pra importar duas classes de nomes iguais de classes diferentes
+
+```java
+package br.com.abc.principais;
+import br.com.abc.informatica.Teclado;
+import br.com.abc.instrumento.Teclado;
+public class Principal {
+	public static void main(String[] args){
+		Teclado tec1 = new Teclado();
+		Teclado tec2 = new Teclado();
+	}
+}
+```
+
+## dica
+
+tem varias bibliotecas de classe no seguinte site: commons.apache.org
+
