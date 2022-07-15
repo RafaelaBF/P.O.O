@@ -60,7 +60,7 @@ public class Pessoa{
 public class Programa{
   public static void main(String[] args){
     Pessoa p1 = new Pessoa("Victor");
-    p1.setIdade(15);
+    p1.setIdade(18);
     System.out.println(p1.getIdade() + p1.getNome());
     Pessoa p2 = new Pessoa("Rafaela", 17);
   }
@@ -74,8 +74,6 @@ public class Programa{
 ## Static
 
 Ao definir um metodo como estatico, é possivel chama-lo diretamente com o nome da classe, sem instanciar um objeto para usar.
-
-O static define que é algo 
 
 > OBS.: Normalmente o static é utilizado em casos onde não é necessário a utilização de variaveis de instância.
 
