@@ -59,6 +59,8 @@ public class Leao extends Animal{
 
 ## Keyword Abstract
 
+### Classes
+
 Ao criar classes sem uma definição concreta, como Animal (pode ser um cachorro, gato, papagaio, etc), utilizamos a keyword _abstract_.
 
 ```java
@@ -66,11 +68,11 @@ public abstract class Animal {
 }
 ```
 
-A partir do momento que colocamos uma classe como abstrata, não conseguimos criar um objeto da classe que é definido como abstrata.
+A partir do momento que colocamos uma classe como abstrata, não conseguimos criar um objeto dessa classe.
 
 ```java
 public static void main(String[] args){
-  Animal x = new Animal();
+  Animal x = new Animal(); //erro de compilacao
 }
 ```
 
@@ -81,7 +83,7 @@ Porém, caso seja alguma classe que extende a classe abstrata, é possível.
 ```java
 public abstract class Animal {
   private String nome;
-  public void setNome(String s){
+  public Animal(String s){
     this.nome = s;
   }
 }
@@ -89,19 +91,64 @@ public abstract class Animal {
 
 ```java
 public class Leao extends Animal {
-  
+  public Leao(String s){
+    super(s);
+  }
 }
+```
+
+### Métodos
+
+**ATENÇÃO!!!!!**
+
+**MÉTODOS ABSTRATOS NÃO POSSUEM CODIGO.**
+
+**VAI CAIR NA PROVA E SE ERRAR VAI PERDER PONTO**
+
+Ao definir um método como abstract, ele não deve possuir código, pois ele obriga a **ocorrência da sobrescrita nas subclasses**.
+
+> Arquivo: Animal.java
+
+```java
+public abstract class Animal {
+  private String nome;
+  public void setNome(String s){
+    this.nome = s;
+  }
+  public abstract void comer();
+  public abstract void comer();
+}
+```
+
+> Arquivo: Gato.java
+
+```java
+public class Gato extends Animal {
+  public void comer(){
+    System.out.println("Gato está comendo...");
+  }
+  public void correr(){
+    System.out.println("Gato está correndo...");
+  }
+}
+```
+
+Podemos criar um vetor de uma classe abstrata, pois estamos só criando espaços na memória para receber um tipo de classe, e suas subclasses.
+
+```java
+Animal x[] = new Animal[3];
+x[0] = new Gato(); //compila
+x[1] = new Cachorro(); //compila
+x[2] = new Animal(); //não compila
 ```
 
 
 
+### Regras keyword abstract
 
-
-
-
-
-
-
+pra voce ter um metodo abstrato, voce precisa obrigatoriamente que a classe seja abstrata
+uma classe abstrata pode ter n metodos abstratos, n metodos concretos, n variaveis, etc
+podemos ter uma outra
 
 
 ## Pacotes principais
