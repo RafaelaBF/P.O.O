@@ -1,6 +1,10 @@
 # Aula 9
 
+:warning: Essa aula teve MUITA coisa. [Clique em caso de duvida](https://www.google.com/) ;) :warning:
 
+
+
+> OBS.: Tem mais anotações nos códigos
 
 ## Keyword final
 
@@ -142,14 +146,11 @@ x[1] = new Cachorro(); //compila
 x[2] = new Animal(); //não compila
 ```
 
-
-
 ### Regras keyword abstract
 
 pra voce ter um metodo abstrato, voce precisa obrigatoriamente que a classe seja abstrata
 uma classe abstrata pode ter n metodos abstratos, n metodos concretos, n variaveis, etc
 podemos ter uma outra
-
 
 ## Pacotes principais
 
@@ -164,3 +165,78 @@ Não precisamos fazer import dela pois o java já os importa por padrão.
 - final
 - class
 - public
+
+## Interface
+
+Uma interface é como se fosse uma classe abstrata com **todos os métodos abstratos**.
+Ou seja, não é necessário definir os métodos como public, ou abstract, e etc.
+
+Já as variáveis, são todas definidas como **public static final**.
+
+Toda classe concreta que implemente a interface, ela obrigatoriamente vai ter que implementar todos os métodos daquela interface.
+
+Para "importar" uma interface, é necessário usar a keyword `implements`.
+
+> Arquivo: Voador.java
+
+```java
+public interface Voador {
+  void levantarVoo();
+  void pousar();
+  void voar();
+}
+```
+
+> Arquivo: Veiculo.java
+
+```java
+```
+
+> Arquivo: Animal.java
+
+```java
+```
+
+> Arquivo: Aviao.java
+
+```java
+```
+
+> Arquivo: Passaro.java
+
+```java
+```
+
+Dessa forma, é possível executar os métodos específicos das subclasses sem especificar com ifs e instanceofs.
+
+> Arquivo: Main.java
+
+```java
+public static void main(String[] args){
+  Voador[] x = new Voador[3];
+  x[0] = new Aviao();
+  x[1] = new Aviao();
+  x[2] = new Passaro();
+
+  for(int i = 0; i < x.length; i++){
+    x[i].levantarVoo();
+  }
+}
+```
+
+> OBS.: A quantidade de classes a serem extendidas é restrita a UMA
+>       Porém, a quantidade de interfaces a serem implementadas não possui limites.
+
+> Arquivo: Oviparo.java
+
+```java
+```
+
+> Arquivo: Passaro.java
+
+```java
+```
+
+## anotações soltas
+
+- não existe herança multipla em java
