@@ -1,5 +1,7 @@
 # Aula 10
 
+OBS.: Tem bastante coisa importante comentada dentro dos códigos dessa aula, então da uma checada ;)
+
 ## ArrayList
 
 Sabemos que podemos criar arrays normais das seguintes formas:
@@ -117,17 +119,4 @@ arr.add("bbb");
 arr.remove(1); //retorna o Objeto que foi removido
 arr.remove("aaa"); //retorna uma boolean de caso removeu ou não
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
