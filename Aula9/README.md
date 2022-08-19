@@ -120,7 +120,7 @@ public abstract class Animal {
     this.nome = s;
   }
   public abstract void comer();
-  public abstract void comer();
+  public abstract void correr();
 }
 ```
 
