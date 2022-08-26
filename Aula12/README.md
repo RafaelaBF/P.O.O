@@ -149,6 +149,107 @@ System.out.println(n);
 
 > Output: "a bola"
 
+# Diferença entre Conjunto e Lista
+
+Nas listas, garantirmos que a ordem seja respeitada.
+
+Porém, no conjunto não. Essa é sua característica principal.
+
+ex.:
+
+```java
+	HashSet m = new HashSet();
+	m.add("casa");
+	m.add("bola");
+	m.add("mesa");
+	m.add("cama");
+	System.out.println(m);
+```
+
+> Output: casa, mesa, bola, cama
+
+Nos conjuntos, não são aceitos elementos repetidos.
+
+ex.:
+
+```java
+	HashSet m = new HashSet();
+	m.add("casa");
+	m.add("bola");
+	m.add("mesa");
+	m.add("cama");
+	m.add("cama");
+	System.out.println(m);
+```
+
+# Exercicio de HashSet
+
+Fazer media de caracteres das strings dentro de uma hashset
+
+## Com advanced for
+
+```java
+package toCharArray;
+
+import java.util.HashSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		HashSet<String> m = new HashSet<String>();
+		m.add("casa");
+		m.add("bola");
+		m.add("mesa");
+		m.add("cama");
+		m.add("arvore");
+		System.out.println(mediaHashSet(m));
+	}
+	public static double mediaHashSet(HashSet<String> hash) {
+		double media = 0.0;
+		double div = hash.size();
+		for(String element : hash) {
+			media += element.length();
+		}
+		return media/div;
+	}
+}
+```
+
+## Com Iterator
+
+O Iterator permite que a gente possa acessar todos os objetos de uma estrutura que definirmos que ele exista.
+
+Ou seja, caso eu defina um iterator em uma ArrayList, ele poderá acessar todos os elementos da ArrayList, e isso serve para HashSet, List, Collection, etc.
+
+```java
+package toCharArray;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		HashSet<String> m = new HashSet<String>();
+		m.add("casa");
+		m.add("bola");
+		m.add("mesa");
+		m.add("cama");
+		m.add("arvore");
+		System.out.println(mediaHashSet(m));
+	}
+	public static double mediaHashSet(HashSet<String> hash) {
+		Iterator<String> it = hash.iterator();
+		double media = 0.0;
+		double div = hash.size();
+		while(it.hasNext()) {			//boolean pra saber se há um proximo elemento no endereço de memoria que o iterator está apontando
+			media += it.next().length();	//it.next() retorna o proximo elemento que ele está olhando, e como aqui ele já estava olhando para o "inicio" da hashset, ele pega o primeiro elemento
+		}
+		return media/div;
+	}
+}
+```
+
 
 # Anotações soltas
 
@@ -165,7 +266,7 @@ double val = Double.parseDouble(k[1]);
 ```
 
 
-
+toda Collection tem acesso a um Iterator.
 
 
 
