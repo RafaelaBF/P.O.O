@@ -150,7 +150,19 @@ System.out.println(n);
 > Output: "a bola"
 
 
+# Anotações soltas
 
+nao sei oq contextualizar disso aq, mas ta aq
+
+`Luiz Carlos#1000.70`
+`Ana Maria#1357.30`
+
+```java
+ArrayList x = Utils.getFuncionario();
+String u = (String) x.get(0);
+String k[] = u.split("#");
+double val = Double.parseDouble(k[1]);
+```
 
 
 
