@@ -251,6 +251,8 @@ public class Main {
 ```
 
 
+# oqq ele vai colocar agr
+
 # Anotações soltas
 
 nao sei oq contextualizar disso aq, mas ta aq
