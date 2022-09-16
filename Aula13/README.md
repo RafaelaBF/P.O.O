@@ -60,6 +60,8 @@ Pessoa ps = (Pessoa)m.get("aa");
 
 > Crie um mapa em que a chave representa o nome dos alunos e o valor a idade. Em seguida, invoque um método que retorne a média das idades dos alunos.
 
+## Utilizando os valores do HashMap
+
 ```java
 import java.util.Collection;
 import java.util.HashMap;
@@ -100,3 +102,55 @@ public class Main {
 }
 
 ```
+
+## Utilizando o keySet()
+
+```java
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		HashMap<String, Integer> m = new HashMap<String, Integer>();
+		int quant = sc.nextInt();
+		sc.nextLine();
+		for(int i = 0; i < quant; i++) {
+			String nome = sc.nextLine();
+			int idade = sc.nextInt();
+			sc.nextLine();
+			m.put(nome, idade);
+		}
+		System.out.println(m);
+		System.out.println(mediaHash(m));
+		
+		sc.close();
+	}
+	
+	public static double mediaHash(HashMap<String, Integer> m) {
+		double media = 0;
+		Set<String> c = m.keySet();
+		Iterator<String> iter = c.iterator();
+		while(iter.hasNext()) {
+			media += m.get((String)iter.next());
+		}
+		return media/m.values().size();
+	}
+}
+```
+
+
+
+
+# Coisas que irão cair na prova (Segundo Trimestre)
+
+- sobrescrita de .equals
+- prestar atenção no super() das subclasses
+- sobrescrita de .toString() na classe mãe
+- sobrescrita de .toString() nas classes filhas (super.toString())
+- herança, construtores
+- Collection, Set, Iterator, Map, ArrayList
+- .toCharArray(), .toUpperCase(), .split()
