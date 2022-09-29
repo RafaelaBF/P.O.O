@@ -142,8 +142,61 @@ public class Main {
 }
 ```
 
+## Percorrendo os valores do HashMap sem generics
+
+```java
+public class Main {
+	
+	public static double media(HashMap m) { // recebe como parâmetro apenas o mapa
+		double media = 0;
+		int soma = 0 ;
+		
+		
+		// Para percorrer uma collection é preciso do iterator
+		
+		Collection idades = m.values(); // o método .values() retorna uma collection com todos os valores do mapa sem suas chaves
+		
+		// O uso de .values() é necessário, pois para percorrer o mapa acessando seus valores, seria necessário saber as chaves de cada valor
+		 
+		
+		Iterator<Integer> it = idades.iterator(); 
+		
+		while(it.hasNext()) {
+			soma += (int) it.next();
+			
+		}
+		
+		media = soma/idades.size();
+			
+		
+		return media;
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		HashMap map = new HashMap(); // criando o mapa sem generics
+		
+		Scanner sc = new Scanner(System.in);
+		for(int i = 0; i < 3; i++) {                  
+			// lendo os nomes dos alunos e suas idades
+			
+			String nome;
+			nome = sc.nextLine();
+			int idade;
+			idade = sc.nextInt();
+			sc.nextLine();
+			map.put(nome, idade); // colocando os dados coletados no mapa, sendo o nome a chave e a idade o valor
+		}
+		
+		System.out.println("A média das idades dos alunos é " + media(map)); // retornando a médias das idades na tela
+		
+	}
+}
 
 
+
+```
 
 # Coisas que irão cair na prova (Segundo Trimestre)
 
